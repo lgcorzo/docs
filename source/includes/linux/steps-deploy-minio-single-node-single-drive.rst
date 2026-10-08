@@ -82,7 +82,7 @@ Alternatively, change the ``User`` and ``Group`` values to another user and
 group on the system host with the necessary access and permissions.
 
 MinIO publishes additional startup script examples on 
-:minio-git:`github.com/minio/minio-service <minio-service>`.
+:minio-git:`github.com/lgcorzo/minio-service <minio-service>`.
 
 To update deployments managed using ``systemctl``, see :ref:`minio-upgrade-systemctl`.
 

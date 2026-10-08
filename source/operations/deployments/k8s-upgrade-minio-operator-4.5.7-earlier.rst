@@ -193,7 +193,7 @@ Procedure
          .. code-block:: shell
             :class: copyable
 
-            kubectl apply -k github.com/minio/operator/?ref=v5.0.15
+            kubectl apply -k github.com/lgcorzo/operator/?ref=v5.0.15
 
          In the sample output below, ``configured`` at the end of the line indicates where a new change was applied from the updated CRD:
 
@@ -483,14 +483,14 @@ There is no direct upgrade path for 4.0.0 - 4.2.2 installations to |operator-ver
 #. Upgrade to Operator 4.2.3
 
    Download the MinIO Kubernetes Plugin 4.2.3 and use it to upgrade the Operator.
-   Open https://github.com/minio/operator/releases/tag/v4.2.3 in a browser and download the binary that corresponds to your local host OS.
+   Open https://github.com/lgcorzo/operator/releases/tag/v4.2.3 in a browser and download the binary that corresponds to your local host OS.
 
    For example, Linux hosts running an Intel or AMD processor can run the following commands:
 
    .. code-block:: shell
       :class: copyable
 
-      wget https://github.com/minio/operator/releases/download/v4.2.3/kubectl-minio_4.2.3_linux_amd64 -o kubectl-minio_4.2.3
+      wget https://github.com/lgcorzo/operator/releases/download/v4.2.3/kubectl-minio_4.2.3_linux_amd64 -o kubectl-minio_4.2.3
       chmod +x kubectl-minio_4.2.3
       ./kubectl-minio_4.2.3 init
 
@@ -603,13 +603,13 @@ There is no direct upgrade path from a 3.X.X series installation to |operator-ve
 #. Upgrade to Operator 4.2.2
 
    Download the MinIO Kubernetes Plugin 4.2.2 and use it to upgrade the Operator.
-   Open https://github.com/minio/operator/releases/tag/v4.2.2 in a browser and download the binary that corresponds to your local host OS.
+   Open https://github.com/lgcorzo/operator/releases/tag/v4.2.2 in a browser and download the binary that corresponds to your local host OS.
    For example, Linux hosts running an Intel or AMD processor can run the following commands:
 
    .. code-block:: shell
       :class: copyable
 
-      wget https://github.com/minio/operator/releases/download/v4.2.3/kubectl-minio_4.2.2_linux_amd64 -o kubectl-minio_4.2.2
+      wget https://github.com/lgcorzo/operator/releases/download/v4.2.3/kubectl-minio_4.2.2_linux_amd64 -o kubectl-minio_4.2.2
       chmod +x kubectl-minio_4.2.2
 
       ./kubectl-minio_4.2.2 init

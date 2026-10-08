@@ -69,4 +69,4 @@ $ sudo docker run -p 443:443 -v /home/user/.minio:/root/.minio/ -v /home/user/da
 ```
 
 ### Step 7: Visit <https://myminio.com> in the browser.
-![Letsencrypt](https://github.com/minio/cookbook/blob/master/docs/screenshots/letsencrypt-certbot-minio.jpg?raw=true)
+![Letsencrypt](https://github.com/lgcorzo/cookbook/blob/master/docs/screenshots/letsencrypt-certbot-minio.jpg?raw=true)

@@ -2,7 +2,7 @@
 
 Using pre-signed URLs, a client can upload files directly to an S3-compatible cloud storage server (S3) without exposing the S3 credentials to the user. 
 
-This guide describes how to use the [`presignedPutObject`](https://docs.min.io/community/minio-object-store/developers/go/API.html#presignedputobject-ctx-context-context-bucketname-objectname-string-expiry-time-duration-url-url-error) API from the [MinIO JavaScript Library](https://github.com/minio/minio-js) to generate a pre-signed URL. This is demonstrated through a JavaScript example in which an Express Node.js server exposes an endpoint to generate a pre-signed URL and a client-side web application uploads a file to MinIO Server using that URL.
+This guide describes how to use the [`presignedPutObject`](https://docs.min.io/community/minio-object-store/developers/go/API.html#presignedputobject-ctx-context-context-bucketname-objectname-string-expiry-time-duration-url-url-error) API from the [MinIO JavaScript Library](https://github.com/lgcorzo/minio-js) to generate a pre-signed URL. This is demonstrated through a JavaScript example in which an Express Node.js server exposes an endpoint to generate a pre-signed URL and a client-side web application uploads a file to MinIO Server using that URL.
 
 - [Upload Files Using Pre-signed URLs ](#upload-files-using-pre-signed-urls-)
   - [1. Create the Server](#1-create-the-server)

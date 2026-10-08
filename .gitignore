@@ -22,3 +22,4 @@ source/developers/python/*.md
 source/operations/monitoring/*.md
 source/includes/common-metrics-*.md
 *.inv
+minio/

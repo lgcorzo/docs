@@ -85,23 +85,23 @@ endif
 
 sync-operator-version:
 	@echo "Retrieving latest Operator version"
-	@$(eval OPERATOR = $(shell curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/minio/operator/releases/latest | sed "s/https:\/\/github.com\/minio\/operator\/releases\/tag\///" | sed "s/v//"))
-	@$(eval K8SFLOOR = $(shell curl -sL https://raw.githubusercontent.com/minio/operator/master/testing/kind-config-floor.yaml | grep -F -m 1 'node:v' | awk 'BEGIN { FS = ":" } ; {print $$3}'))
+	@$(eval OPERATOR = $(shell curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/lgcorzo/operator/releases/latest | sed "s/https:\/\/github.com\/lgcorzo\/operator\/releases\/tag\///" | sed "s/v//"))
+	@$(eval K8SFLOOR = $(shell curl -sL https://raw.githubusercontent.com/lgcorzo/operator/master/testing/kind-config-floor.yaml | grep -F -m 1 'node:v' | awk 'BEGIN { FS = ":" } ; {print $$3}'))
 
 	@echo "Updating Operator to ${OPERATOR}"
 	@$(SED_INPLACE) "s|OPERATOR|${OPERATOR}|g" source/conf.py
 	@$(SED_INPLACE) "s|K8SFLOOR|${K8SFLOOR}|g" source/conf.py
 
 	@echo "Updating Helm Charts"
-#	@$(shell curl --retry 10 -Ls -o source/includes/k8s/operator-values.yaml https://raw.githubusercontent.com/minio/operator/v${OPERATOR}/helm/operator/values.yaml)
+#	@$(shell curl --retry 10 -Ls -o source/includes/k8s/operator-values.yaml https://raw.githubusercontent.com/lgcorzo/operator/v${OPERATOR}/helm/operator/values.yaml)
 
 sync-kes-version:
 	@echo "Retrieving latest stable KES version"
-	@$(eval KES = $(shell curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/minio/kes/releases/latest | sed "s/https:\/\/github.com\/minio\/kes\/releases\/tag\///"))
+	@$(eval KES = $(shell curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/lgcorzo/kes/releases/latest | sed "s/https:\/\/github.com\/lgcorzo\/kes\/releases\/tag\///"))
 	@$(SED_INPLACE) "s|KESLATEST|${KES}|g" source/conf.py
 
 sync-minio-server-docs:
-	@echo "Retrieving select docs from github.com/minio/minio/docs"
+	@echo "Retrieving select docs from github.com/lgcorzo/minio/docs"
 	@(./sync-minio-server-docs.sh)
 
 sync-minio-version:

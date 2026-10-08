@@ -53,15 +53,15 @@ extensions = [
 
 extlinks = {
     'kube-docs'       : ('https://kubernetes.io/docs/%s', None),
-    'minio-git'       : ('https://github.com/minio/%s', None),
+    'minio-git'       : ('https://github.com/lgcorzo/%s', None),
     'github'          : ('https://github.com/%s', None),
     'kube-api'        : ('https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/%s', None),
     'aws-docs'        : ('https://docs.aws.amazon.com/%s', None),
     's3-docs'         : ('https://docs.aws.amazon.com/AmazonS3/latest/userguide/%s', None),
     's3-api'          : ('https://docs.aws.amazon.com/AmazonS3/latest/API/%s', None),
     'iam-docs'        : ('https://docs.aws.amazon.com/IAM/latest/UserGuide/%s', None),
-    'minio-release'   : ('https://github.com/minio/minio/releases/tag/%s', '%s'),
-    'mc-release'      : ('https://github.com/minio/mc/releases/tag/%s', '%s'),
+    'minio-release'   : ('https://github.com/lgcorzo/minio/releases/tag/%s', '%s'),
+    'mc-release'      : ('https://github.com/lgcorzo/mc/releases/tag/%s', '%s'),
     'prometheus-docs' : ('https://prometheus.io/docs/%s', None),
     'podman-docs'     : ('https://docs.podman.io/en/latest/%s', None),
     'podman-git'      : ('https://github.com/containers/podman/%s', None),
@@ -205,9 +205,9 @@ rst_prolog = """
 
 .. |podman| replace:: `Podman <https://podman.io/>`__
 
-.. |kes-tag| replace:: `KESLATEST <https://github.com/minio/kes/releases/tag/KESLATEST>`__
+.. |kes-tag| replace:: `KESLATEST <https://github.com/lgcorzo/kes/releases/tag/KESLATEST>`__
 .. |kes-stable| replace:: KESLATEST
-.. |minio-tag| replace:: `MINIOLATEST <https://github.com/minio/minio/releases/tag/MINIOLATEST>`__
+.. |minio-tag| replace:: `MINIOLATEST <https://github.com/lgcorzo/minio/releases/tag/MINIOLATEST>`__
 .. |minio-latest| replace:: MINIOLATEST
 .. |minio-rpm| replace:: RPMURL
 .. |minio-deb| replace:: DEBURL
@@ -228,9 +228,9 @@ rst_prolog = """
 .. |MNMD| replace:: :abbr:`MNMD (Multi-Node Multi-Drive)`
 
 .. |operator-version-stable| replace:: OPERATOR
-.. |helm-charts| replace:: `Helm Charts <https://github.com/minio/operator/tree/vOPERATOR/helm>`__
-.. |helm-operator-chart| replace:: `Helm Operator Charts <https://github.com/minio/operator/blob/vOPERATOR/helm/operator>`__
-.. |helm-tenant-chart| replace:: `Helm Tenant Charts <https://github.com/minio/operator/tree/vOPERATOR/helm/tenant>`__
+.. |helm-charts| replace:: `Helm Charts <https://github.com/lgcorzo/operator/tree/vOPERATOR/helm>`__
+.. |helm-operator-chart| replace:: `Helm Operator Charts <https://github.com/lgcorzo/operator/blob/vOPERATOR/helm/operator>`__
+.. |helm-tenant-chart| replace:: `Helm Tenant Charts <https://github.com/lgcorzo/operator/tree/vOPERATOR/helm/tenant>`__
 .. |k8s-floor| replace:: K8SFLOOR
 
 .. |cpp-sdk-version| replace:: CPPVERSION

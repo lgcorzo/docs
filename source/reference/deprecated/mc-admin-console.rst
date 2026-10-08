@@ -12,9 +12,9 @@
 
 .. important::
 
-   This command has been replaced by :mc:`mc admin logs` in `mc RELEASE.2022-12-02T23-48-47Z <https://github.com/minio/mc/releases/tag/RELEASE.2022-12-02T23-48-47Z>`__.
+   This command has been replaced by :mc:`mc admin logs` in `mc RELEASE.2022-12-02T23-48-47Z <https://github.com/lgcorzo/mc/releases/tag/RELEASE.2022-12-02T23-48-47Z>`__.
 
-   The command was previously replaced by ``mc support logs show`` in `mc RELEASE.2022-06-26T18-51-48Z <https://github.com/minio/mc/tree/RELEASE.2022-06-26T18-51-48Z>`__.
+   The command was previously replaced by ``mc support logs show`` in `mc RELEASE.2022-06-26T18-51-48Z <https://github.com/lgcorzo/mc/tree/RELEASE.2022-06-26T18-51-48Z>`__.
 
 Description
 -----------

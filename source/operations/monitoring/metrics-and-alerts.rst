@@ -34,7 +34,7 @@ You can scrape the base endpoint to collect all metrics in a single operation, o
 .. important:: 
 
    The V3 metrics on this page may have gaps, inaccuracies, or incorrect information.
-   Reference the `minio/minio <https://github.com/minio/minio>`_ repository and review the source code for the most accurate representation of metrics as available.
+   Reference the `minio/minio <https://github.com/lgcorzo/minio>`_ repository and review the source code for the most accurate representation of metrics as available.
 
 For example, the following endpoint returns audit metrics:
 

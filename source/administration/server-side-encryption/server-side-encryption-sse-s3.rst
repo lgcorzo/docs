@@ -103,8 +103,8 @@ The following command retrieves the root :minio-git:`identity <kes/wiki/Configur
    :class: copyable
 
    curl -sSL --tlsv1.2 \
-     -O 'https://raw.githubusercontent.com/minio/kes/master/root.key' \
-     -O 'https://raw.githubusercontent.com/minio/kes/master/root.cert'
+     -O 'https://raw.githubusercontent.com/lgcorzo/kes/master/root.key' \
+     -O 'https://raw.githubusercontent.com/lgcorzo/kes/master/root.cert'
 
 Set the following environment variables in the terminal or shell:
 

@@ -21,7 +21,7 @@ The following procedure uses ``kubectl -k`` to install the Operator from the Min
       :class: copyable
       :substitutions:
 
-      kubectl apply -k "github.com/minio/operator?ref=v|operator-version-stable|"
+      kubectl apply -k "github.com/lgcorzo/operator?ref=v|operator-version-stable|"
 
    The command outputs a list of installed resources.
 
@@ -43,7 +43,7 @@ The following procedure uses ``kubectl -k`` to install the Operator from the Min
    In this example, the ``minio-operator`` pod is MinIO Operator and the ``console`` pod is the Operator Console.
 
    You can modify your Operator deployment by applying kubectl patches.
-   You can find examples for common configurations in the `Operator GitHub repository <https://github.com/minio/operator/tree/master/examples/kustomization>`__.
+   You can find examples for common configurations in the `Operator GitHub repository <https://github.com/lgcorzo/operator/tree/master/examples/kustomization>`__.
 
    .. _minio-k8s-deploy-operator-access-console:
 

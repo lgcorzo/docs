@@ -66,8 +66,8 @@ Flags
 
 .. 
    Default values update frequently and can be found in the following files:
-   https://github.com/minio/operator/blob/master/kubectl-minio/cmd/init.go
-   https://github.com/minio/operator/blob/master/kubectl-minio/cmd/helpers/constants.go
+   https://github.com/lgcorzo/operator/blob/master/kubectl-minio/cmd/init.go
+   https://github.com/lgcorzo/operator/blob/master/kubectl-minio/cmd/helpers/constants.go
 
    For minio/console, run ``kubectl minio init -o | grep minio/console``
 
@@ -83,7 +83,7 @@ The command supports the following flags:
    :optional:
 
    The image to use when deploying the :minio-git:`Operator Console <operator>` in Operator mode, where administrators can create and manage MinIO tenants using a Graphical User Interface.
-   Defaults to the `version bundled in variable DefaultOperatorImage for the matching Operator release <https://github.com/minio/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
+   Defaults to the `version bundled in variable DefaultOperatorImage for the matching Operator release <https://github.com/lgcorzo/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
 
 .. mc-cmd:: --console-tls
    :optional:
@@ -98,13 +98,13 @@ The command supports the following flags:
    :optional:
 
    The default :minio-git:`kes <kes>` image to use when creating a new MinIO tenant. 
-   Defaults to the `version bundled in variable DefaultKESImage for the matching Operator release <https://github.com/minio/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
+   Defaults to the `version bundled in variable DefaultKESImage for the matching Operator release <https://github.com/lgcorzo/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
 
 .. mc-cmd:: --default-minio-image
    :optional:
 
    The default :minio-git:`minio <minio>` image to use when creating a new MinIO tenant. 
-   Defaults to the `version bundled in variable DefaultTenantImage for the matching Operator release <https://github.com/minio/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
+   Defaults to the `version bundled in variable DefaultTenantImage for the matching Operator release <https://github.com/lgcorzo/operator/blob/master/kubectl-minio/cmd/helpers/constants.go>`__.
 
 .. mc-cmd:: --image
    :optional:

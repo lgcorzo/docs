@@ -44,7 +44,7 @@ Kustomize is included with the :kube-docs:`kubectl <reference/kubectl>` command 
 
 This procedure assumes that your local host machine has both the matching version of ``kubectl`` for your Kubernetes cluster *and* the necessary access to that cluster to create new resources.
 
-The `default MinIO Operator Kustomize template <https://github.com/minio/operator/blob/master/kustomization.yaml>`__ provides a starting point for customizing configurations for your local environment.
+The `default MinIO Operator Kustomize template <https://github.com/lgcorzo/operator/blob/master/kustomization.yaml>`__ provides a starting point for customizing configurations for your local environment.
 You can modify the default Kustomization file or apply your own `patches <https://datatracker.ietf.org/doc/html/rfc6902>`__ to customize the Operator deployment for your Kubernetes cluster.
 
 .. _minio-k8s-deploy-operator-tls:

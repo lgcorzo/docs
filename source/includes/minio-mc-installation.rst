@@ -95,7 +95,7 @@
       .. code-block:: shell
          :class: copyable
 
-         go install github.com/minio/mc@latest
+         go install github.com/lgcorzo/mc@latest
 
       :mc:`mc update` does not support source-based installations.
 

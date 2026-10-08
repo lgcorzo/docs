@@ -211,7 +211,7 @@ The following steps define the variable with kustomize.
       kind: Kustomization
       
       resources:
-      - github.com/minio/operator/resources
+      - github.com/lgcorzo/operator/resources
       
       patches:
       - patch: |-

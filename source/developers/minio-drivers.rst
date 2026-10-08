@@ -26,7 +26,7 @@ MinIO publishes the following Software Development Kits (SDK):
 Go
 --
 
-GitHub: `minio/minio-go <https://github.com/minio/minio-go>`__
+GitHub: `minio/minio-go <https://github.com/lgcorzo/minio-go>`__
 
 Latest Version: |go-sdk-version|
 
@@ -39,7 +39,7 @@ Download from GitHub
   .. code-block:: shell
      :class: copyable
 
-     go get github.com/minio/minio-go/v7
+     go get github.com/lgcorzo/minio-go/v7
 
 
 .. _python-sdk:
@@ -47,7 +47,7 @@ Download from GitHub
 Python
 ------
 
-GitHub: `minio/minio-py <https://github.com/minio/minio-py>`__
+GitHub: `minio/minio-py <https://github.com/lgcorzo/minio-py>`__
 
 Latest Version: |python-sdk-version|
 
@@ -68,7 +68,7 @@ Install Methods
     .. code-block:: shell
        :class: copyable
 
-       git clone https://github.com/minio/minio-py
+       git clone https://github.com/lgcorzo/minio-py
        cd minio-py
        python setup.py install
 
@@ -78,7 +78,7 @@ Install Methods
 Java
 ----
 
-GitHub: `minio/minio-java <https://github.com/minio/minio-java>`__
+GitHub: `minio/minio-java <https://github.com/lgcorzo/minio-java>`__
 
 Latest version: |java-sdk-version|
 
@@ -118,7 +118,7 @@ Install methods
 .NET
 ----
 
-GitHub: `minio/minio-dotnet <https://github.com/minio/minio-dotnet>`__
+GitHub: `minio/minio-dotnet <https://github.com/lgcorzo/minio-dotnet>`__
 
 Latest Version: |dotnet-sdk-version|
 
@@ -140,7 +140,7 @@ Download from NuGet
 JavaScript
 ----------
 
-GitHub: `minio/minio-js <https://github.com/minio/minio-js>`__
+GitHub: `minio/minio-js <https://github.com/lgcorzo/minio-js>`__
 
 Latest Version: |javascript-sdk-version|
 
@@ -161,7 +161,7 @@ Install
     .. code-block:: shell
        :class: copyable
 
-       git clone https://github.com/minio/minio-js
+       git clone https://github.com/lgcorzo/minio-js
        cd minio-js
        npm install
        npm install -g
@@ -172,7 +172,7 @@ Install
 Haskell
 -------
 
-GitHub: `minio/minio-hs <https://github.com/minio/minio-hs>`__
+GitHub: `minio/minio-hs <https://github.com/lgcorzo/minio-hs>`__
 
 Latest Version: |haskell-sdk-version|
 
@@ -191,7 +191,7 @@ Install
 C++
 ---
 
-GitHub: `minio/minio-cpp <https://github.com/minio/minio-cpp>`__
+GitHub: `minio/minio-cpp <https://github.com/lgcorzo/minio-cpp>`__
 
 Reference: `MinIO C++ SDK Reference <https://minio-cpp.min.io/>`__
 
@@ -208,7 +208,7 @@ Install
     .. code-block:: shell
        :class: copyable
 
-       git clone https://github.com/minio/minio-cpp
+       git clone https://github.com/lgcorzo/minio-cpp
        cd minio-cpp
        wget --quiet -O vcpkg-master.zip https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip
        unzip -qq vcpkg-master.zip
@@ -223,7 +223,7 @@ Install
 Rust
 ----
 
-GitHub: `minio/minio-rs <https://github.com/minio/minio-rs>`__
+GitHub: `minio/minio-rs <https://github.com/lgcorzo/minio-rs>`__
 
 Latest Version
   |rust-sdk-version|

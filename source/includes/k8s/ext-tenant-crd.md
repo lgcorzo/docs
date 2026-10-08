@@ -360,7 +360,7 @@ service or offline
 ## KESConfig
 
 KESConfig (`kes`) defines the configuration of the [MinIO Key Encryption
-Service](https://github.com/minio/kes) (KES) StatefulSet deployed as
+Service](https://github.com/lgcorzo/kes) (KES) StatefulSet deployed as
 part of the MinIO Tenant. KES supports Server-Side Encryption of objects
 using an external Key Management Service (KMS).  
 
@@ -437,7 +437,7 @@ opaque secret</a> which contains environment variables to use for
 setting up the MinIO KES service.<br />
 </p>
 <p>See the <a
-href="https://github.com/minio/operator/blob/master/examples/kes-secret.yaml">MinIO
+href="https://github.com/lgcorzo/operator/blob/master/examples/kes-secret.yaml">MinIO
 Operator <code>console-secret.yaml</code></a> for an example.</p></td>
 </tr>
 <tr class="even">
@@ -1444,7 +1444,7 @@ href="#localcertificatereference">LocalCertificateReference</a></em></p></td>
 <td style="text-align: left;"><p><strong>Optional</strong><br />
 </p>
 <p>Enables mTLS authentication between the MinIO Tenant pods and <a
-href="https://github.com/minio/kes">MinIO KES</a>.
+href="https://github.com/lgcorzo/kes">MinIO KES</a>.
 <strong>Required</strong> for enabling connectivity between the MinIO
 Tenant and MinIO KES.<br />
 </p>
@@ -1463,7 +1463,7 @@ the TLS certificate.<br />
 </ul>
 <p>The specified certificate <strong>must</strong> correspond to an
 identity on the KES server. See the <a
-href="https://github.com/minio/kes/wiki/Configuration#policy-configuration">KES
+href="https://github.com/lgcorzo/kes/wiki/Configuration#policy-configuration">KES
 Wiki</a> for more information on KES identities.<br />
 </p>
 <p>If deploying KES with the MinIO Operator, include the hash of the
@@ -1633,7 +1633,7 @@ href="#kesconfig">KESConfig</a></em></p></td>
 <td style="text-align: left;"><p><strong>Optional</strong><br />
 </p>
 <p>Directs the MinIO Operator to deploy the <a
-href="https://github.com/minio/kes">MinIO Key Encryption Service</a>
+href="https://github.com/lgcorzo/kes">MinIO Key Encryption Service</a>
 (KES) using the specified configuration. The MinIO KES supports
 performing server-side encryption of objects on the MiNIO Tenant.<br />
 </p></td>

@@ -23,12 +23,12 @@ Procedure
 
       .. tab-item:: Download the MinIO Kubernetes Object Definition
 
-         Download `minio-dev.yaml <https://raw.githubusercontent.com/minio/docs/master/source/extra/examples/minio-dev.yaml>`__ to your host machine:
+         Download `minio-dev.yaml <https://raw.githubusercontent.com/lgcorzo/docs/master/source/extra/examples/minio-dev.yaml>`__ to your host machine:
 
          .. code-block:: shell
             :class: copyable
 
-            curl https://raw.githubusercontent.com/minio/docs/master/source/extra/examples/minio-dev.yaml -O
+            curl https://raw.githubusercontent.com/lgcorzo/docs/master/source/extra/examples/minio-dev.yaml -O
 
          The file describes two Kubernetes resources:
 
