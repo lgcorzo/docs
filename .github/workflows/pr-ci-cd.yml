@@ -35,7 +35,8 @@ jobs:
       run: ./build-docs-ci.sh
 
     - name: Staging
-      uses: burnett01/rsync-deployments@7.0.2
+      if: ${{ secrets.DEPLOY_HOST_STAGING != '' }}
+      uses: burnett01/rsync-deployments@v8
       with:
         path: ./minio/
         switches:  --mkpath -rv --delete
@@ -47,6 +48,7 @@ jobs:
         remote_key_pass: ${{ secrets.DEPLOY_KEY_STAGING_PASS }}
 
     - name: comment
+      if: ${{ secrets.STAGING_URL != '' }}
       uses: actions/github-script@v7
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
