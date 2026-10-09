@@ -70,29 +70,29 @@
 **Interfaces:**
 - Replaces dead HTTP 410 URLs (`https://dl.min.io/client/mc/release/...`) with container image extraction (`ghcr.io/lgcorzo/mc:latest` or `quay.io/minio/aistor/mc:latest`) or GitHub Releases API.
 
-- [ ] **Step 1: Write verification script to identify all `dl.min.io` instances**
+- [x] **Step 1: Write verification script to identify all `dl.min.io` instances**
 ```bash
 grep -rn "dl.min.io" /mnt/F024B17C24B145FE/Repos/Minio_project/ --exclude-dir=".git"
 ```
 
-- [ ] **Step 2: Update `operator/testing/install-mc.sh` and `common.sh`**
+- [x] **Step 2: Update `operator/testing/install-mc.sh` and `common.sh`**
 Replace curl/wget downloads from dl.min.io with container extraction:
 ```bash
 docker run --rm --entrypoint cat ghcr.io/lgcorzo/mc:latest /usr/bin/mc > /tmp/mc
 chmod +x /tmp/mc && sudo mv /tmp/mc /usr/local/bin/mc
 ```
 
-- [ ] **Step 3: Update `minio-go/.github/workflows/go-windows.yml`**
+- [x] **Step 3: Update `minio-go/.github/workflows/go-windows.yml`**
 Replace download URLs with official GitHub Release release assets:
 ```yaml
 run: |
   curl.exe -L -o minio.exe https://github.com/lgcorzo/minio/releases/latest/download/minio.exe
 ```
 
-- [ ] **Step 4: Update `minio/Makefile` and replication test scripts**
+- [x] **Step 4: Update `minio/Makefile` and replication test scripts**
 Replace curl invocation in `minio/Makefile` with release asset fallback or container binary extraction.
 
-- [ ] **Step 5: Run tests and verify zero `dl.min.io` references remain**
+- [x] **Step 5: Run tests and verify zero `dl.min.io` references remain**
 Run: `grep -rn "dl.min.io" /mnt/F024B17C24B145FE/Repos/Minio_project/ --exclude-dir=".git" | wc -l`
 Expected: `0`
 
@@ -121,7 +121,7 @@ Expected: `0`
 - Upgrades `actions/cache@v1..v3` -> `actions/cache@v4`
 - Adds `cache: true` where applicable to accelerate CI times.
 
-- [ ] **Step 1: Write automated workflow updater script**
+- [x] **Step 1: Write automated workflow updater script**
 ```bash
 python3 -c "
 import os, glob
@@ -147,11 +147,11 @@ for r in os.listdir(base):
 "
 ```
 
-- [ ] **Step 2: Inspect workflow diffs across Wave 1 & 2 repositories**
+- [x] **Step 2: Inspect workflow diffs across Wave 1 & 2 repositories**
 Run: `git diff .github/workflows` across updated repositories.
 Expected: Clean upgrade to `@v4` and `@v5`.
 
-- [ ] **Step 3: Validate syntax with `yamllint` or action linters**
+- [x] **Step 3: Validate syntax with `yamllint` or action linters**
 Run local syntax validation across all updated YAML files.
 
 ---
@@ -173,7 +173,7 @@ Run local syntax validation across all updated YAML files.
 - Go matrix: `['1.24.x', '1.25.x', '1.26.x']`
 - Govulncheck security scanning step.
 
-- [ ] **Step 1: Create standard Go CI workflow template**
+- [x] **Step 1: Create standard Go CI workflow template**
 ```yaml
 name: CI
 
@@ -201,7 +201,7 @@ jobs:
         run: go test -v -race ./...
 ```
 
-- [ ] **Step 2: Add `govulncheck` workflow to repositories**
+- [x] **Step 2: Add `govulncheck` workflow to repositories**
 ```yaml
 name: Security Scan
 
@@ -224,7 +224,7 @@ jobs:
           govulncheck ./...
 ```
 
-- [ ] **Step 3: Test locally with `go test ./...` in each repository**
+- [x] **Step 3: Test locally with `go test ./...` in each repository**
 Verify all packages pass their tests locally before pushing workflow changes.
 
 ---
@@ -243,7 +243,7 @@ Verify all packages pass their tests locally before pushing workflow changes.
 **Problem Statement:**
 Several intermediate SDKs still reference `github.com/minio/*` directly while downstream apps (`minio`, `mc`, `console`) reference `github.com/lgcorzo/*`. This creates split module graphs and type mismatch errors.
 
-- [ ] **Step 1: Map out module replacement table**
+- [x] **Step 1: Map out module replacement table**
 Define canonical sovereign release tags across:
   - `github.com/lgcorzo/cli -> v1.24.2-lgcorzo.1`
   - `github.com/lgcorzo/minio-go/v7 -> v7.0.91-lgcorzo.2`
@@ -251,7 +251,7 @@ Define canonical sovereign release tags across:
   - `github.com/lgcorzo/madmin-go/v4 -> v4.6.7-lgcorzo.1`
   - `github.com/lgcorzo/pkg/v3 -> v3.4.0-lgcorzo.1`
 
-- [ ] **Step 2: Update `replace` directives in consumers**
+- [x] **Step 2: Update `replace` directives in consumers**
 Update `go.mod` in `operator`, `warp`, `sidekick`, and `dperf` with standard sovereign replace blocks:
 ```go
 replace (
@@ -261,7 +261,7 @@ replace (
 )
 ```
 
-- [ ] **Step 3: Run `go mod tidy` and verify compilation**
+- [x] **Step 3: Run `go mod tidy` and verify compilation**
 Run: `go test ./...` in each updated repository.
 Expected: Clean pass with no module conflict warnings.
 
@@ -286,13 +286,13 @@ Expected: Clean pass with no module conflict warnings.
   - `ghcr.io/lgcorzo/directpv:latest`
   - `ghcr.io/lgcorzo/kes:latest`
 
-- [ ] **Step 1: Update container image defaults in `directpv/pkg/admin/installer/args.go`**
+- [x] **Step 1: Update container image defaults in `directpv/pkg/admin/installer/args.go`**
 Ensure default sidecar and container registries point to accessible public images.
 
-- [ ] **Step 2: Update test harnesses in `operator` and `console`**
+- [x] **Step 2: Update test harnesses in `operator` and `console`**
 Verify all integration test scripts use `ghcr.io/lgcorzo/minio:latest` and `ghcr.io/lgcorzo/mc:latest`.
 
-- [ ] **Step 3: Validate Docker builds**
+- [x] **Step 3: Validate Docker builds**
 Ensure multi-arch Dockerfiles compile locally without network errors:
 ```bash
 docker build -t ghcr.io/lgcorzo/minio:test minio/
@@ -311,7 +311,7 @@ docker build -t ghcr.io/lgcorzo/minio:test minio/
 - `code-review-graph`: provides Git-aware blast radius analysis and semantic code search.
 - `graphify`: provides cross-repo visual architecture graphs, dependency flow maps, and component clustering.
 
-- [ ] **Step 1: Initialize per-project `code-review-graph` indices**
+- [x] **Step 1: Initialize per-project `code-review-graph` indices**
 Run across all 38 repositories:
 ```bash
 python3 -c "
@@ -326,10 +326,10 @@ for r in sorted(os.listdir(base)):
 "
 ```
 
-- [ ] **Step 2: Run spoke Graphify analysis for Tier 1 repositories**
+- [x] **Step 2: Run spoke Graphify analysis for Tier 1 repositories**
 Generate spoke knowledge graphs for `minio`, `mc`, `operator`, `console`, `directpv`, `kes`.
 
-- [ ] **Step 3: Merge spoke graphs into workspace hub graph**
+- [x] **Step 3: Merge spoke graphs into workspace hub graph**
 Merge spoke graphs into `/mnt/F024B17C24B145FE/Repos/Minio_project/graphify-out/` to enable unified cross-repo dependency exploration.
 
 ---
