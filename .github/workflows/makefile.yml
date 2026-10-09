@@ -42,7 +42,8 @@ jobs:
         path: ./minio
 
     - name: Publishing
-      uses: burnett01/rsync-deployments@7.0.2
+      if: ${{ secrets.DEPLOY_HOST != '' }}
+      uses: burnett01/rsync-deployments@v8
       with:
         path: ./minio/
         switches:  --mkpath -rv --delete

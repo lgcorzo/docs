@@ -86,7 +86,7 @@
       .. code-block:: shell
          :class: copyable
 
-         go install github.com/minio/minio@latest
+         go install github.com/lgcorzo/minio@latest
 
       :mc-cmd:`mc admin update` does not support source-based installations.
 

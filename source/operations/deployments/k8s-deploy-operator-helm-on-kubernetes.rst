@@ -134,7 +134,7 @@ This method may support easier pre-configuration of the Operator compared to the
       :class: copyable
       :substitutions:
 
-      curl -O https://raw.githubusercontent.com/minio/operator/master/helm-releases/operator-|operator-version-stable|.tgz
+      curl -O https://raw.githubusercontent.com/lgcorzo/operator/master/helm-releases/operator-|operator-version-stable|.tgz
 
 
 #. (Optional) Modify the ``values.yaml``

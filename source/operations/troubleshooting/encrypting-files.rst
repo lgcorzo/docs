@@ -48,7 +48,7 @@ To install the decryption tool, install `Go <https://golang.org/dl/>`_, then run
 .. code-block:: shell
    :class: copyable
 
-   go install github.com/minio/minio/docs/debugging/inspect@latest
+   go install github.com/lgcorzo/minio/docs/debugging/inspect@latest
 
 After installing the inspect decryption binary, decrypt the file with the following command:
 

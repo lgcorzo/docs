@@ -6,7 +6,7 @@ function main() {
 
    # Extract metrics v2 list
 
-   curl --retry 10 -Ls https://raw.githubusercontent.com/minio/minio/master/docs/metrics/prometheus/list.md | csplit - /"# Bucket Metrics"/
+   curl --retry 10 -Ls https://raw.githubusercontent.com/lgcorzo/minio/master/docs/metrics/prometheus/list.md | csplit - /"# Bucket Metrics"/
    mv xx00 source/includes/common-metrics-cluster.md
 
    # Kludgy. Does csplit again on the Bucket Metrics file fragment
@@ -21,7 +21,7 @@ function main() {
 
    # Get the full list
 
-   curl --retry 10 -Ls https://raw.githubusercontent.com/minio/minio/3a0cc6c86e6d0c500d8f1f508ffde8152efb8c7e/docs/metrics/v3.md | csplit - /"## Metric Categories"/
+   curl --retry 10 -Ls https://raw.githubusercontent.com/lgcorzo/minio/3a0cc6c86e6d0c500d8f1f508ffde8152efb8c7e/docs/metrics/v3.md | csplit - /"## Metric Categories"/
 
    # Ignore xx00, contains intro text
    # Overwritten in second csplit anyway

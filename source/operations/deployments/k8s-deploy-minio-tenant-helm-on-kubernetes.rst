@@ -108,7 +108,7 @@ It provides a baseline from which you can modify and tailor the Tenant to your r
       .. code-block:: shell
          :class: copyable
 
-         curl -sLo values.yaml https://raw.githubusercontent.com/minio/operator/master/helm/tenant/values.yaml
+         curl -sLo values.yaml https://raw.githubusercontent.com/lgcorzo/operator/master/helm/tenant/values.yaml
 
       Open the ``values.yaml`` object in your preferred text editor.
 
@@ -264,7 +264,7 @@ This method may support easier pre-configuration of the Tenant compared to the :
       :class: copyable
       :substitutions:
 
-      curl -O https://raw.githubusercontent.com/minio/operator/master/helm-releases/tenant-|operator-version-stable|.tgz
+      curl -O https://raw.githubusercontent.com/lgcorzo/operator/master/helm-releases/tenant-|operator-version-stable|.tgz
 
    Each chart contains a ``values.yaml`` file you can customize to suit your needs.
    For details on the options available in the MinIO Tenant ``values.yaml``, see :ref:`minio-tenant-chart-values`.

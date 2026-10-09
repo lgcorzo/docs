@@ -1,6 +1,6 @@
 [Unit]
 Description=KES
-Documentation=https://github.com/minio/kes/wiki
+Documentation=https://github.com/lgcorzo/kes/wiki
 Wants=network-online.target
 After=network-online.target
 AssertFileIsExecutable=/usr/local/bin/kes

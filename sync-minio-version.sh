@@ -33,7 +33,7 @@ function main() {
 	RPMPPC64LE=$(cat /tmp/downloads-minio.json | jq '.Linux."MinIO Server".ppc64le.RPM.download')
 
 
-	MINIO=$(curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/minio/minio/releases/latest | sed "s/https:\/\/github.com\/minio\/minio\/releases\/tag\///")
+	MINIO=$(curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/lgcorzo/minio/releases/latest | sed "s/https:\/\/github.com\/lgcorzo\/minio\/releases\/tag\///")
 
 	kname=$(uname -s)
 

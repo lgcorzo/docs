@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/minio/docs.git"
+    "url": "git+https://github.com/lgcorzo/docs.git"
   },
   "author": "MinIO Documentation Team",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/minio/docs/issues"
+    "url": "https://github.com/lgcorzo/docs/issues"
   },
-  "homepage": "https://github.com/minio/docs#readme",
+  "homepage": "https://github.com/lgcorzo/docs#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

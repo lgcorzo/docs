@@ -94,7 +94,7 @@ Upgrade MinIO Operator 5.0.15 to |operator-version-stable|
             .. code-block:: shell
                :class: copyable
 
-               kubectl apply -k github.com/minio/operator
+               kubectl apply -k github.com/lgcorzo/operator
 
             In the sample output below, ``configured`` indicates where a new change was applied from the updated CRD:
 

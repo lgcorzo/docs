@@ -18,4 +18,4 @@
          mkdir -p ~/minio-kubernetes/git
          cd ~/minio-examples/git
 
-         git clone https://github.com/minio/minio-operator.git
+         git clone https://github.com/lgcorzo/minio-operator.git

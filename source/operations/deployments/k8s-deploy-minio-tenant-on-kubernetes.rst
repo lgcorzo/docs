@@ -55,7 +55,7 @@ It provides a baseline from which you can modify and tailor the Tenant to your r
       .. code-block:: shell
          :class: copyable
 
-         kubectl kustomize https://github.com/minio/operator/examples/kustomization/base/ > tenant-base.yaml
+         kubectl kustomize https://github.com/lgcorzo/operator/examples/kustomization/base/ > tenant-base.yaml
 
       The command creates a single YAML file with multiple objects separated by the ``---`` line.
       Open the file in your preferred editor.

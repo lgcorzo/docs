@@ -20,7 +20,7 @@ function main() {
     fi
 
     for sdk in ${SDKS}; do
-	sdk_version=$(curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/minio/minio-${sdk}/releases/latest | sed "s,https://github.com/minio/minio-${sdk}/releases/tag/,,g")
+	sdk_version=$(curl --retry 10 -Ls -o /dev/null -w "%{url_effective}" https://github.com/lgcorzo/minio-${sdk}/releases/latest | sed "s,https://github.com/lgcorzo/minio-${sdk}/releases/tag/,,g")
 	echo "latest stable ${sdk} for ${sdk_version}"
 	sdk_dir="docs"
 	if [ "${sdk}" == "dotnet" ]; then
@@ -41,8 +41,8 @@ function main() {
                 source_dir="rust" # no API.md yet
 		;;
 	esac
-	curl --retry 10 -Ls -o source/developers/${source_dir}/API.md https://raw.githubusercontent.com/minio/minio-${sdk}/${sdk_version}/${sdk_dir}/API.md
-	curl --retry 10 -Ls -o source/developers/${source_dir}/quickstart.md https://raw.githubusercontent.com/minio/minio-${sdk}/${sdk_version}/README.md
+	curl --retry 10 -Ls -o source/developers/${source_dir}/API.md https://raw.githubusercontent.com/lgcorzo/minio-${sdk}/${sdk_version}/${sdk_dir}/API.md
+	curl --retry 10 -Ls -o source/developers/${source_dir}/quickstart.md https://raw.githubusercontent.com/lgcorzo/minio-${sdk}/${sdk_version}/README.md
 
 	case ${sdk} in
 	    "dotnet")
