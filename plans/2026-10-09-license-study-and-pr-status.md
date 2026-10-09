@@ -1,0 +1,134 @@
+# License Study & PR / CI Status Report (38 Workspace Repositories)
+
+**Date:** 2026-10-09  
+**Workspace:** `/mnt/F024B17C24B145FE/Repos/Minio_project`  
+**Scope:** Comprehensive License Compliance & Governance Study + Pull Request & GitHub Actions Status for all 38 repositories.
+
+---
+
+## Part 1: Comprehensive License Study & Ecosystem Governance
+
+### 1. Executive Summary & Taxonomy
+
+Across the 38 repositories in the MinIO ecosystem workspace, code is distributed across six distinct open-source and open-content licensing models:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   38 WORKSPACE REPOSITORIES                            │
+├──────────────────┬─────────────────┬───────────────────┬───────────────┤
+│ AGPL-3.0 (13)    │ Apache-2.0 (14) │ BSD-3-Clause (6)  │ MIT (3)       │
+│ Strong Copyleft  │ Permissive      │ Permissive        │ Permissive    │
+│ (Core / Daemons) │ (SDKs / SIMD)   │ (Stdlib Forks)    │ (Utilities)   │
+├──────────────────┴─────────────────┴───────────────────┴───────────────┤
+│ MPL-2.0 (1): websocket (File-level Copyleft)                           │
+│ CC-BY-4.0 (1): docs (Documentation & Technical Content)                 │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 2. Repository-by-Repository License Matrix
+
+| Repository | Category / Role | License | License Files | Sovereign Compatibility & Guidance |
+| :--- | :--- | :--- | :--- | :--- |
+| **`asm2plan9s`** | SIMD / Assembly Tooling | **Apache-2.0** | `LICENSE` | Permissive with patent grant. Safe for embedding in build pipelines. |
+| **`blake2b-simd`** | Crypto Acceleration | **Apache-2.0** | `LICENSE` | Permissive. Compatible with proprietary and open-source consumers. |
+| **`certgen`** | PKI / Certificate Tool | **BSD-3-Clause** | `LICENSE` | Permissive. Standard BSD attribution requirements apply. |
+| **`cli`** | Command-line primitives | **MIT** | `LICENSE` | Highly permissive. No copyleft obligations. |
+| **`colorjson`** | JSON Formatting | **BSD-3-Clause** | Header (Go stdlib `encoding/json` fork) | Permissive Go runtime heritage. Full redistribution rights. |
+| **`console`** | Admin Web UI | **AGPL-3.0** | `LICENSE`, `.license.tmpl` | Strong Network Copyleft. Modifications served over network must be open-sourced. |
+| **`crc64nvme`** | Checksum Acceleration | **Apache-2.0** | `LICENSE` | Permissive with patent grant. High throughput SIMD primitive. |
+| **`csvparser`** | CSV Data Processing | **BSD-3-Clause** | Header (Go stdlib `encoding/csv` fork) | Permissive Go stdlib heritage. |
+| **`directpv`** | CSI / K8s Storage Driver | **AGPL-3.0** | `LICENSE` | Strong Copyleft. Kubernetes DaemonSet/CSI driver changes require AGPL disclosure. |
+| **`dnscache`** | DNS Resolver Utility | **MIT** | `LICENSE` | Permissive. Can be statically linked into any binary. |
+| **`docs`** | Technical Documentation | **CC-BY-4.0** | `LICENSE` | Creative Commons Attribution. (Relicensed from AGPL-3.0 at commit `73772c7f`). |
+| **`dperf`** | Storage Performance Bench | **AGPL-3.0** | `LICENSE` | AGPL-3.0 copyleft tool. |
+| **`filepath`** | File System Traversal | **BSD-3-Clause** | Header (Go stdlib `path/filepath` fork) | Permissive Go stdlib heritage. |
+| **`highwayhash`** | Hashing primitive | **Apache-2.0** | `LICENSE` | Permissive SIMD algorithm. Patent grant included. |
+| **`kes`** | Key Management Server | **AGPL-3.0** | `LICENSE` | AGPL-3.0 server daemon. KMS API integrations must respect network copyleft. |
+| **`kms-go`** | KMS Client / Driver | **AGPL-3.0** | `LICENSE` | AGPL-3.0 driver. Note: linking into external apps triggers AGPL virality. |
+| **`madmin-go`** | Admin API Client | **AGPL-3.0** | `LICENSE`, `license.go` | AGPL-3.0 SDK. Restricted to AGPL tools or internal microservices. |
+| **`mc`** | MinIO Client CLI | **AGPL-3.0** | `LICENSE` | AGPL-3.0 client application. |
+| **`md5-simd`** | SIMD MD5 Accelerator | **Apache-2.0** | `LICENSE`, `LICENSE.Golang` | Dual Apache-2.0 / BSD (Golang parts). Permissive. |
+| **`minio`** | Object Storage Server | **AGPL-3.0** | `LICENSE` | Core storage engine under AGPL-3.0. Network trigger applies to hosted services. |
+| **`minio-cf`** | Cloud Foundry BOSH | **Apache-2.0** | `LICENSE` | Permissive packaging manifest. |
+| **`minio-go`** | S3 Client SDK (v7) | **Apache-2.0** | `LICENSE` | **Crucial Distinction**: Kept as Apache-2.0 to allow commercial/proprietary integration. |
+| **`mint`** | Functional Test Harness | **Apache-2.0** | `LICENSE` | Permissive QA/Test automation framework. |
+| **`mtls`** | Mutual TLS Helper | **MIT** | `LICENSE` | Permissive TLS helper library. |
+| **`multipart-debug`** | S3 Multipart Utility | **Apache-2.0** | `LICENSE` | Permissive diagnostics tool. |
+| **`mux`** | HTTP Request Multiplexer | **BSD-3-Clause** | `LICENSE` | Gorilla Mux fork under BSD-3-Clause. |
+| **`operator`** | Kubernetes Operator | **AGPL-3.0** | `LICENSE` | AGPL-3.0 K8s controller and CRD manager. |
+| **`pkg`** | Core Server Subsystems | **AGPL-3.0** | `LICENSE` | AGPL-3.0 internal subsystems (auth, policy, event, lock). |
+| **`pkger`** | Binary Asset Packaging | **AGPL-3.0** | `LICENSE` | AGPL-3.0 build utility. |
+| **`selfupdate`** | Binary Auto-updater | **Apache-2.0** | `LICENSE`, `LICENSE.minisig` | Permissive auto-update library with Minisign verification. |
+| **`sha256-simd`** | SIMD SHA-256 | **Apache-2.0** | `LICENSE` | High-performance AVX-512/ARM crypto accelerator under Apache-2.0. |
+| **`sidekick`** | High-perf Reverse Proxy | **AGPL-3.0** | `LICENSE` | AGPL-3.0 proxy daemon. |
+| **`simdjson-go`** | SIMD JSON Parser | **Apache-2.0** | `LICENSE` | Port of Daniel Lemire's simdjson under Apache-2.0. |
+| **`sio`** | SIO Encrypted Streams | **Apache-2.0** | `LICENSE` | Permissive cryptographic streaming library. |
+| **`warp`** | S3 Benchmarking Tool | **AGPL-3.0** | `LICENSE` | AGPL-3.0 load generation tool. |
+| **`websocket`** | Gorilla WebSocket Fork | **MPL-2.0** | `LICENSE` | Weak copyleft. File-level modifications must be retained under MPL-2.0. |
+| **`xxml`** | Fast XML Parser | **BSD-3-Clause** | `LICENSE` | Permissive XML parser. |
+| **`zipindex`** | ZIP Archive Indexer | **Apache-2.0** | `LICENSE`, `GO_LICENSE` | Apache-2.0 with Go stdlib BSD heritage. |
+
+---
+
+### 3. Key Licensing Architectural Insights
+
+1. **The Client SDK Boundary (`minio-go` vs `madmin-go` / `kms-go`):**
+   - `minio-go` is intentionally licensed under **Apache-2.0** so third-party developers and enterprise platforms can embed the S3 client without triggering copyleft conditions.
+   - `madmin-go` and `kms-go` are licensed under **AGPL-3.0**, meaning administrative orchestrators using these libraries must either be open-sourced under AGPL-3.0 or maintained strictly within internal infrastructure boundaries.
+
+2. **Network Interaction & AGPL-3.0 Obligations:**
+   - For `minio`, `console`, `operator`, and `directpv`, Section 13 of AGPL-3.0 requires that anyone interacting with the software remotely through a computer network must be given access to the Corresponding Source code of the version running.
+   - In sovereign deployments (`@lgcorzo/*`), maintaining public git remotes with all active modifications satisfies this requirement.
+
+3. **Go Standard Library Derivations (BSD-3-Clause):**
+   - `colorjson`, `csvparser`, and `filepath` are specialized forks of the Go standard library (`net/http`, `encoding/json`, `encoding/csv`, `path/filepath`) designed for performance optimization and custom delimiter handling. They carry Go's 3-Clause BSD copyright.
+
+---
+
+## Part 2: Active Pull Requests Status
+
+As of **October 9, 2026**, the following pull requests are active across the 38 repositories:
+
+| Repository | PR # | Title | Branch | Status / Focus | PR Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`console`** | `#2` | Migrate references to lgcorzo and update README with Dark Gravity rationale | `jules-5168133937925775734-a8bc0a89` | Open (Autonomous Migration) | [#2](https://github.com/lgcorzo/console/pull/2) |
+| **`directpv`** | `#2` | Sovereign Migration to @lgcorzo/directpv & Dark Gravity Rationale | `sovereign-migration-lgcorzo-16188934400852895644` | Open (CSI Driver Sovereign Rebase) | [#2](https://github.com/lgcorzo/directpv/pull/2) |
+| **`kes`** | `#2` | `build(deps)`: bump the go_modules group across 1 directory with 5 updates | `dependabot/go_modules/go_modules-8ddaad7d61` | Open (Dependency Bump) | [#2](https://github.com/lgcorzo/kes/pull/2) |
+| **`minio-go`** | `#2` | Migrate module and imports to `github.com/lgcorzo/minio-go` | `sovereign-migration-lgcorzo-8939832585740266964` | Open (SDK Sovereign Migration) | [#2](https://github.com/lgcorzo/minio-go/pull/2) |
+| **`operator`** | `#2` | Migrate `minio/*` references to lgcorzo and update README | `sovereign-migration-lgcorzo-11872978230345265394` | Open (K8s Operator Rebase) | [#2](https://github.com/lgcorzo/operator/pull/2) |
+| **`pkg`** | `#3` | Policy table sharing rename | `policy-table-sharing-rename` | Open (Subsystem Optimization) | [#3](https://github.com/lgcorzo/pkg/pull/3) |
+
+---
+
+## Part 3: GitHub Actions & CI/CD Error Breakdown
+
+The table below summarizes workflow runs requiring attention across the ecosystem:
+
+| Repository | Failed Workflow | Branch / Trigger | Root Cause & Action Needed | Workflow Link |
+| :--- | :--- | :--- | :--- | :--- |
+| **`cli`** | Go CI | `sovereign-migration-lgcorzo-cli-2996007532711625132` | Build/Lint failure on sovereign import migration. | [Run 37838995481](https://github.com/lgcorzo/cli/actions/runs/37838995481) |
+| **`console`** | Workflow, VulnCheck | `jules-5168133937925775734-a8bc0a89` | TypeScript frontend build / Go vulnerability flag. | [Run 37922497571](https://github.com/lgcorzo/console/actions/runs/37922497571) |
+| **`directpv`** | Linters, VulnCheck, Functional | `sovereign-migration-lgcorzo-16188934400852895644` | CSI linter violations & mock cluster test timeout. | [Run 37932115664](https://github.com/lgcorzo/directpv/actions/runs/37932115664) |
+| **`docs`** | `pr-ci-cd.yml`, `makefile.yml` | `main`, `jules-8378509583963392195-1c588f04` | Sphinx documentation build dependencies missing. | [Run 37910707838](https://github.com/lgcorzo/docs/actions/runs/37910707838) |
+| **`dperf`** | Go | `sovereign-migration-dperf-16440308835274974436` | Go 1.24 toolchain incompatibility in CI runner. | [Run 37846766849](https://github.com/lgcorzo/dperf/actions/runs/37846766849) |
+| **`kes`** | Go | `dependabot/go_modules/go_modules-8ddaad7d61` | Breaking API change in updated Go dependency. | [Run 37837790146](https://github.com/lgcorzo/kes/actions/runs/37837790146) |
+| **`madmin-go`** | VulnCheck, Golangci-lint, Go | `return-max-ib-ob-nodes` | Unchecked error / linter rule mismatch. | [Run 37911000840](https://github.com/lgcorzo/madmin-go/actions/runs/37911000840) |
+| **`minio`** | CodeQL, Advanced Security | `master`, `update-readme` | CodeQL workflow permission / SARIF upload token. | [Run 37370605104](https://github.com/lgcorzo/minio/actions/runs/37370605104) |
+| **`minio-go`** | Build (Windows/Linux/RDMA), VulnCheck | `sovereign-migration-lgcorzo-8939832585740266964` | Submodule import resolution for `@lgcorzo/minio-go`. | [Run 37913480440](https://github.com/lgcorzo/minio-go/actions/runs/37913480440) |
+| **`mtls`** | CI | `sovereign-migration-mtls-9049854047133870405` | Test certificate expiry / TLS 1.3 handshake assertion. | [Run 37840397913](https://github.com/lgcorzo/mtls/actions/runs/37840397913) |
+| **`operator`** | Tenant Tests On Kind | `sovereign-migration-lgcorzo-11872978230345265394` | Kind cluster tenant creation timeout in GitHub runner. | [Run 37929108071](https://github.com/lgcorzo/operator/actions/runs/37929108071) |
+| **`pkg`** | Lint, VulnCheck | `policy-table-sharing-rename` | Strict golangci-lint rule on renamed struct comments. | [Run 37851444631](https://github.com/lgcorzo/pkg/actions/runs/37851444631) |
+| **`sha256-simd`** | Go | `migrate-lgcorzo-sha256-simd-2734141013760657947` | AVX assembly generator mismatch on arm64 builder. | [Run 37840683658](https://github.com/lgcorzo/sha256-simd/actions/runs/37840683658) |
+| **`sidekick`** | Go | `sovereign-migration-lgcorzo-sidekick-12688760889865696150` | Proxy test port binding conflict. | [Run 37842350140](https://github.com/lgcorzo/sidekick/actions/runs/37842350140) |
+
+---
+
+## Part 4: Next Steps & Remediation Priority
+
+1. **Merge Gate Verification (HITL):** Review active PRs (`console#2`, `directpv#2`, `minio-go#2`, `operator#2`, `pkg#3`, `kes#2`) with human sign-off.
+2. **CI Pipeline Repair:**
+   - Fix `docs` Sphinx build runner dependencies (`requirements.txt` environment setup).
+   - Resolve `pkg#3` linter errors following repository guidelines (`make lint`).
+   - Fix module replace paths in `minio-go` sovereign branch so multi-OS builds pass.
