@@ -171,5 +171,30 @@ During execution of the user directive to **solve the PRs problems**, deep archi
   - *Fix:* Added automated pod status, operator log dumping, and pod descriptions before cluster destruction for immediate root cause transparency.
 
 ### 5. `kes` (PR #2)
-- Fully green (10/10 checks passing). Ready for merge.
+- **Status:** **Merged** into master (10/10 checks passing, 100% green).
+
+---
+
+## Part 6: Comprehensive Runtime & Registry Fixes Across Repositories
+
+### 1. `console` (PR #2)
+- **Problem 6: TypeScript compilation error TS2322 & unused imports**: In `BucketFiltering.tsx`, ref typing error on `InputBox` component (`TS2322`) and unused `RefObject` import. Fixed with `InputBoxAny` cast and import cleanup.
+- **Problem 7: Deprecated dl.min.io 410 Gone error breaking `mc` client**: `curl`/`wget` to `https://dl.min.io/client/mc/release/.../mc` returned HTTP 410 Gone with text informing of project archiving:
+  ```text
+  410 Gone
+  The open-source MinIO Server, MinIO Client (mc) and MinIO KES projects are archived and no longer maintained.
+  These files are no longer served from this site.
+  ```
+  Because curl/wget did not fail immediately, the text response was saved as `/usr/local/bin/mc`, resulting in bash syntax errors `syntax error near unexpected token '('` in `mc alias set minio ...` wait loops. Fixed by extracting the official binary directly from the public container `quay.io/minio/aistor/mc:latest` via `docker run --rm --entrypoint cat quay.io/minio/aistor/mc:latest /usr/bin/mc > mc`.
+- **Problem 8: Quay 401 Unauthorized for `quay.io/minio/minio:latest` in tests**: Fixed by pointing Makefile `MINIO_VERSION` to public edge image `quay.io/minio/aistor/minio:edge-daily`.
+- **Problem 9: Sudo permission denied in `initialize-env.sh`**: Fixed runner privilege handling with `sudo mv mc /usr/local/bin || mv mc /usr/local/bin`.
+
+### 2. `operator` (PR #2)
+- **Problem 4: `admin-mc` ImagePullBackOff on `quay.io/minio/mc` 401 Unauthorized**: Kind tests creating `admin-mc` pod used `quay.io/minio/mc` with default `imagePullPolicy: Always` (due to latest/untagged image), which failed with Quay 401 Unauthorized. Fixed by updating to public `quay.io/minio/aistor/mc:latest` with `--image-pull-policy=IfNotPresent` and resilient `kind load docker-image`.
+- **Problem 5: MinIO Server Image 401 on Quay**: `quay.io/minio/minio:latest` returned 401 Unauthorized on Quay. Replaced with active public AIStor images `quay.io/minio/aistor/minio:edge-daily` and preloaded compatibility tags into Kind with `kind load docker-image`.
+
+### 3. `directpv` (PR #2)
+- **Problem 3: Driver none host device requirement vs Docker driver isolation**: DirectPV CSI functional tests create loop block devices (`/dev/loop*`, LVM, LUKS) directly on the runner host. Running Minikube with `driver: docker` prevents Kubernetes from accessing host block devices. Restored Minikube with `driver: none` and generated clean containerd CRI configuration (`containerd config default | sudo tee /etc/containerd/config.toml`).
+- **Problem 4: Upstream CSI sidecar 401 Unauthorized on `quay.io/lgcorzo/`**: Sovereign migration replaced `quay.io/minio/` with `quay.io/lgcorzo/` for upstream CSI sidecars (`csi-provisioner`, `csi-node-driver-registrar`, `csi-resizer`, `livenessprobe`). Because those sidecars are not hosted under `lgcorzo` on Quay, pod scheduling resulted in ImagePullBackOff / 401 Unauthorized. Fixed by adding `SidecarOrg` defaulting to `minio` in `Args` and updating all Kubernetes manifests and kustomization templates to reference public upstream images `quay.io/minio/csi-...`.
+
 

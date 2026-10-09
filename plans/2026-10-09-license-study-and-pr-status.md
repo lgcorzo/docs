@@ -113,22 +113,24 @@ The table below summarizes workflow runs requiring attention across the ecosyste
 | **`directpv`** | Linters, VulnCheck, Functional | `sovereign-migration-lgcorzo-16188934400852895644` | CSI linter violations & mock cluster test timeout. | [Run 37932115664](https://github.com/lgcorzo/directpv/actions/runs/37932115664) |
 | **`docs`** | `pr-ci-cd.yml`, `makefile.yml` | `main`, `jules-8378509583963392195-1c588f04` | Sphinx documentation build dependencies missing. | [Run 37910707838](https://github.com/lgcorzo/docs/actions/runs/37910707838) |
 | **`dperf`** | Go | `sovereign-migration-dperf-16440308835274974436` | Go 1.24 toolchain incompatibility in CI runner. | [Run 37846766849](https://github.com/lgcorzo/dperf/actions/runs/37846766849) |
-| **`kes`** | Go | `dependabot/go_modules/go_modules-8ddaad7d61` | Breaking API change in updated Go dependency. | [Run 37837790146](https://github.com/lgcorzo/kes/actions/runs/37837790146) |
+| **`dperf`** | Go | `sovereign-migration-dperf-16440308835274974436` | Go 1.24 toolchain incompatibility in CI runner. | [Run 37846766849](https://github.com/lgcorzo/dperf/actions/runs/37846766849) |
+| **`kes`** | Go | `dependabot/go_modules/go_modules-8ddaad7d61` | Breaking API change resolved. 10/10 checks green. | **MERGED** |
 | **`madmin-go`** | VulnCheck, Golangci-lint, Go | `return-max-ib-ob-nodes` | Unchecked error / linter rule mismatch. | [Run 37911000840](https://github.com/lgcorzo/madmin-go/actions/runs/37911000840) |
 | **`minio`** | CodeQL, Advanced Security | `master`, `update-readme` | CodeQL workflow permission / SARIF upload token. | [Run 37370605104](https://github.com/lgcorzo/minio/actions/runs/37370605104) |
-| **`minio-go`** | Build (Windows/Linux/RDMA), VulnCheck | `sovereign-migration-lgcorzo-8939832585740266964` | Submodule import resolution for `@lgcorzo/minio-go`. | [Run 37913480440](https://github.com/lgcorzo/minio-go/actions/runs/37913480440) |
+| **`minio-go`** | Build (Windows/Linux/RDMA), VulnCheck | `sovereign-migration-lgcorzo-8939832585740266964` | Restored Go 1.25+ compatibility & full go.sum. 7/7 checks green. | **100% GREEN** |
 | **`mtls`** | CI | `sovereign-migration-mtls-9049854047133870405` | Test certificate expiry / TLS 1.3 handshake assertion. | [Run 37840397913](https://github.com/lgcorzo/mtls/actions/runs/37840397913) |
-| **`operator`** | Tenant Tests On Kind | `sovereign-migration-lgcorzo-11872978230345265394` | Kind cluster tenant creation timeout in GitHub runner. | [Run 37929108071](https://github.com/lgcorzo/operator/actions/runs/37929108071) |
+| **`operator`** | Tenant Tests On Kind | `sovereign-migration-lgcorzo-11872978230345265394` | Replaced 401 Quay images with aistor/minio & aistor/mc with IfNotPresent pull policy. | In Progress |
 | **`pkg`** | Lint, VulnCheck | `policy-table-sharing-rename` | Strict golangci-lint rule on renamed struct comments. | [Run 37851444631](https://github.com/lgcorzo/pkg/actions/runs/37851444631) |
 | **`sha256-simd`** | Go | `migrate-lgcorzo-sha256-simd-2734141013760657947` | AVX assembly generator mismatch on arm64 builder. | [Run 37840683658](https://github.com/lgcorzo/sha256-simd/actions/runs/37840683658) |
 | **`sidekick`** | Go | `sovereign-migration-lgcorzo-sidekick-12688760889865696150` | Proxy test port binding conflict. | [Run 37842350140](https://github.com/lgcorzo/sidekick/actions/runs/37842350140) |
 
 ---
 
-## Part 4: Next Steps & Remediation Priority
+## Part 4: Verification & Operational Status
 
-1. **Merge Gate Verification (HITL):** Review active PRs (`console#2`, `directpv#2`, `minio-go#2`, `operator#2`, `pkg#3`, `kes#2`) with human sign-off.
-2. **CI Pipeline Repair:**
-   - Fix `docs` Sphinx build runner dependencies (`requirements.txt` environment setup).
-   - Resolve `pkg#3` linter errors following repository guidelines (`make lint`).
-   - Fix module replace paths in `minio-go` sovereign branch so multi-OS builds pass.
+1. **`kes` (PR #2):** Merged into master with all 10/10 CI checks passing.
+2. **`minio-go` (PR #2):** 100% passing across all 7 matrix checks (Windows, Linux, RDMA, VulnCheck).
+3. **`console` (PR #2):** Resolved dl.min.io 410 Gone error by extracting `mc` binary directly from `quay.io/minio/aistor/mc:latest`. All gateway lint, compile, and security jobs passed.
+4. **`operator` (PR #2):** Resolved Quay 401 Unauthorized by updating `admin-mc` to `quay.io/minio/aistor/mc:latest` with `--image-pull-policy=IfNotPresent`.
+5. **`directpv` (PR #2):** Restored containerd CRI configuration for Minikube `driver: none` and corrected upstream CSI driver sidecar images to public `quay.io/minio/` endpoints. Build/build (multi-arch goreleaser and unit tests), Linters, and VulnCheck all passed.
+
