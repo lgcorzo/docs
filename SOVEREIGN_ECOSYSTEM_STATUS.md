@@ -73,7 +73,7 @@ The table below catalogs every repository with its latest sovereign release tag,
 
 ## 3. GitOps Deployment & Container Architecture
 
-All runtime images are compiled from sovereign source repositories, pushed to the GitHub Container Registry (`ghcr.io/lgcorzo/*`), and continuously deployed via FluxCD in `/mnt/F024B17C24B145FE/Repos/gitops_internal_lgcorzo`:
+All runtime images are compiled automatically by dedicated GitHub Actions CI/CD pipelines (`.github/workflows/docker-publish.yml` in each repository), pushed directly to the GitHub Container Registry (`ghcr.io/lgcorzo/*`), and continuously deployed via FluxCD in `/mnt/F024B17C24B145FE/Repos/gitops_internal_lgcorzo`:
 
 ```mermaid
 graph TD
