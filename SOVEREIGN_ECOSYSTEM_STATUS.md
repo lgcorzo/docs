@@ -77,23 +77,23 @@ All runtime images are compiled from sovereign source repositories, pushed to th
 
 ```mermaid
 graph TD
-    subgraph Sovereign GHCR Packages
-        OP[ghcr.io/lgcorzo/operator:v7.1.1-lgcorzo.3]
-        SC[ghcr.io/lgcorzo/operator-sidecar:v7.1.1-lgcorzo.3]
-        MN[ghcr.io/lgcorzo/minio:v0.1.0-lgcorzo.2]
-        MC[ghcr.io/lgcorzo/mc:v0.1.1-lgcorzo.2]
+    subgraph SG1 ["Sovereign GHCR Packages"]
+        OP["ghcr.io/lgcorzo/operator:v7.1.1-lgcorzo.3"]
+        SC["ghcr.io/lgcorzo/operator-sidecar:v7.1.1-lgcorzo.3"]
+        MN["ghcr.io/lgcorzo/minio:v0.1.0-lgcorzo.2"]
+        MC["ghcr.io/lgcorzo/mc:v0.1.1-lgcorzo.2"]
     end
 
-    subgraph GitOps Infrastructure (gitops_internal_lgcorzo)
-        HR[infrastructure/storage/releasas.yaml]
-        TN[infrastructure/storage/mlflow-minio.yaml]
-        BK[infrastructure/storage/*-bucket.yaml]
+    subgraph SG2 ["GitOps Infrastructure (gitops_internal_lgcorzo)"]
+        HR["infrastructure/storage/releasas.yaml"]
+        TN["infrastructure/storage/mlflow-minio.yaml"]
+        BK["infrastructure/storage/*-bucket.yaml"]
     end
 
-    subgraph MicroK8s Production Cluster (storage namespace)
-        K8S_OP[MinIO Operator Pods]
-        K8S_TN[mlflow-minio Tenant Pods]
-        K8S_MC[Init & Bucket Provisioning Jobs]
+    subgraph SG3 ["MicroK8s Production Cluster (storage namespace)"]
+        K8S_OP["MinIO Operator Pods"]
+        K8S_TN["mlflow-minio Tenant Pods"]
+        K8S_MC["Init & Bucket Provisioning Jobs"]
     end
 
     OP --> HR --> K8S_OP
