@@ -32,6 +32,8 @@ This repository is actively maintained under `@lgcorzo` as a critical pillar of 
 
 ## Sovereign Ecosystem Architecture & Repositories (38 Repositories)
 
+> For full repository matrix, live release tags, Dependabot status, and cluster deployment specs, see **[SOVEREIGN_ECOSYSTEM_STATUS.md](SOVEREIGN_ECOSYSTEM_STATUS.md)**.
+
 The following table summarizes the 38 interconnected repositories maintained under the `@lgcorzo` sovereign umbrella:
 
 | Tier | Component Type | Repositories | Role in Dark Gravity Factory |
