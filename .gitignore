@@ -19,6 +19,8 @@ source/developers/haskell/*.md
 source/developers/java/*.md
 source/developers/javascript/*.md
 source/developers/python/*.md
+source/developers/rust/*.md
 source/operations/monitoring/*.md
 source/includes/common-metrics-*.md
 *.inv
+minio
