@@ -22,7 +22,7 @@
   "overrides": {
     "braces": "^3.0.3",
     "send": "^0.19.0",
-    "decode-uri-component": "0.2.2"
+    "decode-uri-component": "0.5.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
