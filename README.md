@@ -32,7 +32,8 @@ This repository is actively maintained under `@lgcorzo` as a critical pillar of 
 
 ## Sovereign Ecosystem Architecture & Repositories (38 Repositories)
 
-> For full repository matrix, live release tags, Dependabot status, and cluster deployment specs, see **[SOVEREIGN_ECOSYSTEM_STATUS.md](SOVEREIGN_ECOSYSTEM_STATUS.md)**.
+> - For full repository matrix, live release tags, Dependabot status, and cluster deployment specs, see **[SOVEREIGN_ECOSYSTEM_STATUS.md](SOVEREIGN_ECOSYSTEM_STATUS.md)**.
+> - For the architectural decoupling roadmap and Go module independence strategy, see **[SOVEREIGN_GO_MODULE_DECOUPLING_PLAN.md](SOVEREIGN_GO_MODULE_DECOUPLING_PLAN.md)**.
 
 The following table summarizes the 38 interconnected repositories maintained under the `@lgcorzo` sovereign umbrella:
 
