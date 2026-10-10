@@ -17,9 +17,9 @@ This document provides the definitive status of the **38 repositories** comprisi
 | **Verified Sovereign Releases** | **38 / 38** | Every project has tagged, immutable releases with zero-`:latest` policy |
 | **Active Open Issues** | **0** | 100% of security remediation issues resolved and closed |
 | **Active Open PRs** | **0** | Clean default branches (`master` / `main`); all merged branches pruned |
-| **Dependabot Alerts & Fixes** | **38 / 38 (100%)** | Automated vulnerability alerts & security updates active |
+| **Dependabot Alerts** | **0 (0%)** | 100% of open vulnerabilities resolved across all 38 repositories |
+| **CodeQL Open Alerts** | **0 (0%)** | 100% clean across all 38 repositories under CodeQL static analysis |
 | **Private Vulnerability Reporting** | **38 / 38 (100%)** | Enabled across all 38 repositories |
-| **CodeQL Default Setup** | **38 / 38 (100%)** | Default query suites configured and passing cleanly on default branches |
 | **Production GitOps Cluster** | **Live** | Synced via FluxCD into MicroK8s (`server.internal.lgcorzo`) |
 
 ---
