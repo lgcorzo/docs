@@ -28,11 +28,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 20
+        cache: 'npm'
 
-    - name: npm-install-setup
-      uses: bahmutov/npm-install@v1
-      with:
-        working-directory: ./
+    - name: npm-install
+      run: npm ci
 
     - name: build-docs
       run: ./build-docs-ci.sh
