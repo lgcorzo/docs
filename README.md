@@ -1,5 +1,8 @@
 # Sovereign Documentation Engine (@lgcorzo/docs)
 
+Maintained fork of [minio/docs](https://github.com/minio/docs). It applies security patches and maintenance fixes on top of upstream. Part of the [Dark Gravity](https://github.com/lgcorzo/rust_CACD_autonomous_factory) factory. License: CC BY 4.0.
+
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Sovereign Ecosystem](https://img.shields.io/badge/Sovereign_Ecosystem-@lgcorzo-blueviolet.svg)](https://github.com/lgcorzo)
 [![Build Status](https://github.com/lgcorzo/docs/actions/workflows/makefile.yml/badge.svg)](https://github.com/lgcorzo/docs/actions)
