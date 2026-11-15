@@ -25,7 +25,7 @@ This repository is actively maintained under `@lgcorzo` as a critical pillar of 
    - Serves as the central knowledge engine powering autonomous agent pipelines, developer documentation, deployment runbooks, and architectural specifications across high-throughput storage and cryptographic security modules.
 
 3. **Compliance & Security Standards:**
-   - Maintained under strict SLA compliance aligned with **EU AI Act**, **SOC 2 Type II**, and **ISO 25059** requirements.
+   - Maintained with automated security scanning and versioned documentation designed to facilitate auditing and traceability.
    - Continuous security posture with zero-CVE SLAs enforced through automated daily vulnerability scanning (`Trivy`, `CodeQL`, `govulncheck`).
 
 4. **Ecosystem Interoperability:**
@@ -78,7 +78,7 @@ The ecosystem provides reproducible, verifiable proof of autonomy:
 ### 4. Branch Evolution & Divergent Roadmap
 From **October 10, 2026** onward, `@lgcorzo` default branches follow a distinct architectural trajectory independent of upstream:
 - **No Upstream Rebase Mandate**: The repositories no longer perform automated fast-forward or destructive rebases from upstream repositories. Upstream changes are treated as third-party reference sources, not authoritative base branches.
-- **AIStor Extension Architecture**: Non-AWS additions and sovereign enhancements follow the **AIStor extension** standard, focusing on enterprise-grade multi-tenancy, autonomous AI data pipelines, and strict compliance with EU AI Act and SOC 2 requirements.
+- **AIStor Extension Architecture**: Non-AWS additions and sovereign enhancements follow the **AIStor extension** standard, focusing on enterprise-grade multi-tenancy, autonomous AI data pipelines, and structured auditability and traceability.
 - **Sovereign Go Module Architecture**: Moving systematically through the [Sovereign Go Module Decoupling Plan](SOVEREIGN_GO_MODULE_DECOUPLING_PLAN.md) using replace-overlays and sovereign module namespaces (`github.com/lgcorzo/*`), ensuring stability and freedom from upstream licensing restrictions.
 
 ### Automated CI/CD & Sovereign Maintenance Lifecycle
@@ -174,3 +174,10 @@ This script:
 ## License
 
 This project is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode). See [CONTRIBUTING.md](https://github.com/lgcorzo/docs/tree/master/CONTRIBUTING.md) for contribution guidelines.
+
+---
+
+### Fork Maintenance & Agent Transparency
+
+- **Changes vs. Upstream:** Security dependency updates, CI/CD workflow fixes, and CodeQL remediation are tracked in the [commit history](../../commits) and [Pull Requests](../../pulls?q=is%3Apr).
+- **Agent Tagging (`[agent]`):** Commits and pull requests generated automatically by agents in the Dark Gravity pipeline are prefixed with `[agent]` to distinguish automated maintenance from manual work.
